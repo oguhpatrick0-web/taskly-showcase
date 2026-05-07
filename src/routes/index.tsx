@@ -1,54 +1,26 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { PhoneFrame } from "@/components/PhoneFrame";
-import * as S from "@/components/screens";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Taskly — UI/UX Showcase" },
-      { name: "description", content: "Twenty-screen mockup showcase for the Taskly task management app." },
-    ],
-  }),
-  component: Index,
+  component: Splash,
 });
 
-const screens = [
-  ["Splash", S.Splash],
-  ["Onboarding", S.Onboarding],
-  ["Login", S.Login],
-  ["Dashboard", S.Dashboard],
-  ["Add Task", S.AddTask],
-  ["Calendar", S.CalendarView],
-  ["Task Details", S.TaskDetails],
-  ["Filter / Sort", S.FilterSort],
-  ["Notifications", S.Notifications],
-  ["Settings", S.SettingsMain],
-  ["Profile", S.ProfileDashboard],
-  ["Notification Prefs", S.NotifPrefs],
-  ["Profile Edit", S.ProfileEdit],
-  ["Privacy & Security", S.Privacy],
-  ["Lists & Categories", S.Lists],
-  ["Edit Task", S.EditTask],
-  ["Search", S.SearchScreen],
-  ["Team Activity", S.TeamActivity],
-  ["Logout Dialog", S.LogoutDialog],
-  ["Help & Support", S.Help],
-] as const;
-
-function Index() {
+function Splash() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const t = setTimeout(() => navigate({ to: "/onboarding" }), 1800);
+    return () => clearTimeout(t);
+  }, [navigate]);
   return (
-    <main className="min-h-screen bg-showcase-bg py-10 px-6">
-      <header className="text-center mb-10 text-white">
-        <h1 className="text-3xl font-bold tracking-tight">Taskly</h1>
-        <p className="text-sm text-white/60 mt-1">UI/UX Showcase · 20 Screens · iPhone 16 & 17 Pro Max</p>
-      </header>
-      <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-6 max-w-[2400px] mx-auto">
-        {screens.map(([label, Comp], i) => (
-          <PhoneFrame key={i} label={`${i + 1}. ${label}`}>
-            <Comp />
-          </PhoneFrame>
-        ))}
+    <div className="min-h-screen bg-primary flex flex-col items-center justify-center text-primary-foreground">
+      <div className="w-20 h-20 rounded-3xl bg-white/15 flex items-center justify-center mb-4 backdrop-blur">
+        <Check size={40} strokeWidth={3} />
       </div>
-    </main>
+      <div className="text-4xl font-bold">Taskly</div>
+      <div className="text-sm opacity-80 mt-2 tracking-widest">Organize · Plan · Achieve</div>
+      <div className="absolute bottom-16 w-8 h-8 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+      <Link to="/onboarding" className="absolute bottom-4 text-xs text-white/60">Skip</Link>
+    </div>
   );
 }
