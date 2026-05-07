@@ -9,8 +9,122 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TeamActivityRouteImport } from './routes/team-activity'
+import { Route as TasksRouteImport } from './routes/tasks'
+import { Route as TaskDetailsRouteImport } from './routes/task-details'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as ProfileEditRouteImport } from './routes/profile-edit'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as NotificationPrefsRouteImport } from './routes/notification-prefs'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ListsRouteImport } from './routes/lists'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as FilterRouteImport } from './routes/filter'
+import { Route as EditTaskRouteImport } from './routes/edit-task'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as AddTaskRouteImport } from './routes/add-task'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TeamActivityRoute = TeamActivityRouteImport.update({
+  id: '/team-activity',
+  path: '/team-activity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksRoute = TasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaskDetailsRoute = TaskDetailsRouteImport.update({
+  id: '/task-details',
+  path: '/task-details',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileEditRoute = ProfileEditRouteImport.update({
+  id: '/profile-edit',
+  path: '/profile-edit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationPrefsRoute = NotificationPrefsRouteImport.update({
+  id: '/notification-prefs',
+  path: '/notification-prefs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ListsRoute = ListsRouteImport.update({
+  id: '/lists',
+  path: '/lists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FilterRoute = FilterRouteImport.update({
+  id: '/filter',
+  path: '/filter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditTaskRoute = EditTaskRouteImport.update({
+  id: '/edit-task',
+  path: '/edit-task',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AddTaskRoute = AddTaskRouteImport.update({
+  id: '/add-task',
+  path: '/add-task',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +133,298 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/add-task': typeof AddTaskRoute
+  '/calendar': typeof CalendarRoute
+  '/dashboard': typeof DashboardRoute
+  '/edit-task': typeof EditTaskRoute
+  '/filter': typeof FilterRoute
+  '/help': typeof HelpRoute
+  '/lists': typeof ListsRoute
+  '/login': typeof LoginRoute
+  '/notification-prefs': typeof NotificationPrefsRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRoute
+  '/profile-edit': typeof ProfileEditRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
+  '/task-details': typeof TaskDetailsRoute
+  '/tasks': typeof TasksRoute
+  '/team-activity': typeof TeamActivityRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/add-task': typeof AddTaskRoute
+  '/calendar': typeof CalendarRoute
+  '/dashboard': typeof DashboardRoute
+  '/edit-task': typeof EditTaskRoute
+  '/filter': typeof FilterRoute
+  '/help': typeof HelpRoute
+  '/lists': typeof ListsRoute
+  '/login': typeof LoginRoute
+  '/notification-prefs': typeof NotificationPrefsRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRoute
+  '/profile-edit': typeof ProfileEditRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
+  '/task-details': typeof TaskDetailsRoute
+  '/tasks': typeof TasksRoute
+  '/team-activity': typeof TeamActivityRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/add-task': typeof AddTaskRoute
+  '/calendar': typeof CalendarRoute
+  '/dashboard': typeof DashboardRoute
+  '/edit-task': typeof EditTaskRoute
+  '/filter': typeof FilterRoute
+  '/help': typeof HelpRoute
+  '/lists': typeof ListsRoute
+  '/login': typeof LoginRoute
+  '/notification-prefs': typeof NotificationPrefsRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRoute
+  '/profile-edit': typeof ProfileEditRoute
+  '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
+  '/task-details': typeof TaskDetailsRoute
+  '/tasks': typeof TasksRoute
+  '/team-activity': typeof TeamActivityRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/add-task'
+    | '/calendar'
+    | '/dashboard'
+    | '/edit-task'
+    | '/filter'
+    | '/help'
+    | '/lists'
+    | '/login'
+    | '/notification-prefs'
+    | '/notifications'
+    | '/onboarding'
+    | '/privacy'
+    | '/profile'
+    | '/profile-edit'
+    | '/search'
+    | '/settings'
+    | '/task-details'
+    | '/tasks'
+    | '/team-activity'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/add-task'
+    | '/calendar'
+    | '/dashboard'
+    | '/edit-task'
+    | '/filter'
+    | '/help'
+    | '/lists'
+    | '/login'
+    | '/notification-prefs'
+    | '/notifications'
+    | '/onboarding'
+    | '/privacy'
+    | '/profile'
+    | '/profile-edit'
+    | '/search'
+    | '/settings'
+    | '/task-details'
+    | '/tasks'
+    | '/team-activity'
+  id:
+    | '__root__'
+    | '/'
+    | '/add-task'
+    | '/calendar'
+    | '/dashboard'
+    | '/edit-task'
+    | '/filter'
+    | '/help'
+    | '/lists'
+    | '/login'
+    | '/notification-prefs'
+    | '/notifications'
+    | '/onboarding'
+    | '/privacy'
+    | '/profile'
+    | '/profile-edit'
+    | '/search'
+    | '/settings'
+    | '/task-details'
+    | '/tasks'
+    | '/team-activity'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AddTaskRoute: typeof AddTaskRoute
+  CalendarRoute: typeof CalendarRoute
+  DashboardRoute: typeof DashboardRoute
+  EditTaskRoute: typeof EditTaskRoute
+  FilterRoute: typeof FilterRoute
+  HelpRoute: typeof HelpRoute
+  ListsRoute: typeof ListsRoute
+  LoginRoute: typeof LoginRoute
+  NotificationPrefsRoute: typeof NotificationPrefsRoute
+  NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProfileRoute: typeof ProfileRoute
+  ProfileEditRoute: typeof ProfileEditRoute
+  SearchRoute: typeof SearchRoute
+  SettingsRoute: typeof SettingsRoute
+  TaskDetailsRoute: typeof TaskDetailsRoute
+  TasksRoute: typeof TasksRoute
+  TeamActivityRoute: typeof TeamActivityRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/team-activity': {
+      id: '/team-activity'
+      path: '/team-activity'
+      fullPath: '/team-activity'
+      preLoaderRoute: typeof TeamActivityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks': {
+      id: '/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof TasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/task-details': {
+      id: '/task-details'
+      path: '/task-details'
+      fullPath: '/task-details'
+      preLoaderRoute: typeof TaskDetailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile-edit': {
+      id: '/profile-edit'
+      path: '/profile-edit'
+      fullPath: '/profile-edit'
+      preLoaderRoute: typeof ProfileEditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notification-prefs': {
+      id: '/notification-prefs'
+      path: '/notification-prefs'
+      fullPath: '/notification-prefs'
+      preLoaderRoute: typeof NotificationPrefsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lists': {
+      id: '/lists'
+      path: '/lists'
+      fullPath: '/lists'
+      preLoaderRoute: typeof ListsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/filter': {
+      id: '/filter'
+      path: '/filter'
+      fullPath: '/filter'
+      preLoaderRoute: typeof FilterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edit-task': {
+      id: '/edit-task'
+      path: '/edit-task'
+      fullPath: '/edit-task'
+      preLoaderRoute: typeof EditTaskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/add-task': {
+      id: '/add-task'
+      path: '/add-task'
+      fullPath: '/add-task'
+      preLoaderRoute: typeof AddTaskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +437,25 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AddTaskRoute: AddTaskRoute,
+  CalendarRoute: CalendarRoute,
+  DashboardRoute: DashboardRoute,
+  EditTaskRoute: EditTaskRoute,
+  FilterRoute: FilterRoute,
+  HelpRoute: HelpRoute,
+  ListsRoute: ListsRoute,
+  LoginRoute: LoginRoute,
+  NotificationPrefsRoute: NotificationPrefsRoute,
+  NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProfileRoute: ProfileRoute,
+  ProfileEditRoute: ProfileEditRoute,
+  SearchRoute: SearchRoute,
+  SettingsRoute: SettingsRoute,
+  TaskDetailsRoute: TaskDetailsRoute,
+  TasksRoute: TasksRoute,
+  TeamActivityRoute: TeamActivityRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
