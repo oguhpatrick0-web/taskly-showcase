@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Bell, Calendar as CalIcon, Check, Plus } from "lucide-react";
+import { Bell, Check, Plus } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { useApp } from "@/store";
 
@@ -25,13 +25,6 @@ function Dashboard() {
               <Link to="/task-details" search={{ id: t.id }} className={`text-sm flex-1 ${t.completed ? "line-through text-muted-foreground" : ""}`}>{t.title}</Link>
             </div>
           ))}
-        </div>
-        <div className="mt-4 bg-accent rounded-xl p-3 flex items-center gap-3">
-          <CalIcon size={22} className="text-primary" />
-          <div>
-            <div className="text-sm font-semibold">Team meeting</div>
-            <div className="text-xs text-muted-foreground">Tomorrow 9:00 PM</div>
-          </div>
         </div>
       </div>
       <Link to="/add-task" className="fixed bottom-24 right-1/2 translate-x-[180px] w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-xl">

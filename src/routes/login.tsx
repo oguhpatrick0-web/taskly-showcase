@@ -6,8 +6,8 @@ export const Route = createFileRoute("/login")({ component: Login });
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("oguh@email.com");
-  const [pwd, setPwd] = useState("password");
+  const [email, setEmail] = useState("oguhpatrick0@gmail.com");
+  const [pwd, setPwd] = useState("livingt62");
   return (
     <div className="min-h-screen bg-background px-6 pt-12 max-w-md mx-auto">
       <div className="text-2xl font-bold">Welcome back</div>

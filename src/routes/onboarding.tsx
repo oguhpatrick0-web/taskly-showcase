@@ -13,11 +13,6 @@ function Onboarding() {
         <div className="w-56 h-56 rounded-full bg-accent flex items-center justify-center text-8xl">🧑‍💼</div>
       </div>
       <div className="mt-auto pb-10">
-        <div className="flex justify-center gap-2 mb-6">
-          <div className="w-2 h-2 rounded-full bg-primary" />
-          <div className="w-2 h-2 rounded-full bg-border" />
-          <div className="w-2 h-2 rounded-full bg-border" />
-        </div>
         <Link to="/login" className="block w-full bg-primary text-primary-foreground py-3 rounded-xl text-sm font-semibold text-center">Next</Link>
       </div>
     </div>

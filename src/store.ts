@@ -46,7 +46,7 @@ interface State {
 export const useApp = create<State>()(
   persist(
     (set) => ({
-      user: { name: "Oguh Akachukwu", email: "oguh@email.com", avatar: undefined },
+      user: { name: "Oguh Akachukwu", email: "oguhpatrick0@gmail.com", avatar: undefined },
       tasks: [
         { id: "1", title: "Read your books", priority: "High", category: "Personal", completed: false, createdAt: Date.now() },
         { id: "2", title: "Scout", priority: "Medium", category: "Work", completed: false, createdAt: Date.now() },
@@ -89,6 +89,9 @@ export const useApp = create<State>()(
       set: (p) => set(p),
       updateUser: (u) => set((s) => ({ user: { ...s.user, ...u } })),
     }),
-    { name: "taskly-store" }
+    { name: "taskly-store", version: 2, migrate: (s: any, v) => {
+      if (v < 2 && s?.user) s.user = { ...s.user, email: "oguhpatrick0@gmail.com" };
+      return s;
+    } }
   )
 );
