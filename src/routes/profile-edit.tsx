@@ -31,7 +31,7 @@ function ProfileEdit() {
       </div>
       {showLogout && (
         <div className="fixed inset-0 bg-black/40 z-[100] flex items-center justify-center px-6">
-          <div className="bg-white rounded-2xl p-6 text-center max-w-sm w-full">
+          <div className="bg-card text-card-foreground rounded-2xl p-6 text-center max-w-sm w-full">
             <div className="w-12 h-12 rounded-full bg-danger/15 mx-auto flex items-center justify-center"><LogOut size={20} className="text-danger" /></div>
             <div className="text-base font-bold mt-3">Log out?</div>
             <div className="text-sm text-muted-foreground mt-1">Are you sure you want to log out?</div>
