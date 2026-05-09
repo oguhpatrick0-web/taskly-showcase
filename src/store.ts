@@ -89,6 +89,9 @@ export const useApp = create<State>()(
       set: (p) => set(p),
       updateUser: (u) => set((s) => ({ user: { ...s.user, ...u } })),
     }),
-    { name: "taskly-store" }
+    { name: "taskly-store", version: 2, migrate: (s: any, v) => {
+      if (v < 2 && s?.user) s.user = { ...s.user, email: "oguhpatrick0@gmail.com" };
+      return s;
+    } }
   )
 );
