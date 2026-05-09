@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowLeft, LogOut } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, Camera, LogOut } from "lucide-react";
+import { useRef, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { useApp } from "@/store";
 
@@ -11,14 +11,44 @@ function ProfileEdit() {
   const { user, updateUser } = useApp();
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
+  const [avatar, setAvatar] = useState<string | undefined>(user.avatar);
   const [showLogout, setShowLogout] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      setAvatar(result);
+      updateUser({ avatar: result });
+    };
+    reader.readAsDataURL(file);
+  };
 
   return (
     <AppShell>
       <div className="px-5 pt-8">
         <div className="flex items-center gap-3"><Link to="/profile"><ArrowLeft size={20} /></Link><div className="text-xl font-bold">Edit Profile</div></div>
         <div className="flex flex-col items-center mt-6">
-          <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold">{name[0]}</div>
+          <div className="relative">
+            <div className="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold overflow-hidden">
+              {avatar ? <img src={avatar} alt="avatar" className="w-full h-full object-cover" /> : (name[0] || "?")}
+            </div>
+            <button
+              type="button"
+              onClick={() => fileRef.current?.click()}
+              className="absolute -bottom-1 -right-1 bg-primary text-primary-foreground rounded-full p-2 shadow-md border-2 border-background"
+              aria-label="Upload profile picture"
+            >
+              <Camera size={14} />
+            </button>
+            <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleFile} />
+          </div>
+          <button type="button" onClick={() => fileRef.current?.click()} className="text-xs text-primary font-semibold mt-3">
+            Upload photo
+          </button>
         </div>
         <form onSubmit={(e) => { e.preventDefault(); updateUser({ name, email }); navigate({ to: "/profile" }); }} className="mt-6 space-y-3">
           <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" className="w-full px-3 py-3 border border-border rounded-xl text-sm outline-none" />
