@@ -46,7 +46,7 @@ interface State {
 export const useApp = create<State>()(
   persist(
     (set) => ({
-      user: { name: "Oguh Akachukwu", email: "oguh@email.com", avatar: undefined },
+      user: { name: "Oguh Akachukwu", email: "oguhpatrick0@gmail.com", avatar: undefined },
       tasks: [
         { id: "1", title: "Read your books", priority: "High", category: "Personal", completed: false, createdAt: Date.now() },
         { id: "2", title: "Scout", priority: "Medium", category: "Work", completed: false, createdAt: Date.now() },
