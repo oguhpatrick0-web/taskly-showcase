@@ -21,7 +21,7 @@ export interface Notification {
 }
 
 interface State {
-  user: { name: string; email: string };
+  user: { name: string; email: string; avatar?: string };
   tasks: Task[];
   categories: { name: string; color: string }[];
   notifications: Notification[];
