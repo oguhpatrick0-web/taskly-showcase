@@ -18,7 +18,9 @@ function Profile() {
           <Link to="/settings"><SettingsIcon size={20} /></Link>
         </div>
         <div className="bg-primary rounded-2xl p-4 mt-4 flex items-center gap-3 text-white">
-          <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center text-xl font-bold">{user.name[0]}</div>
+          <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center text-xl font-bold overflow-hidden">
+            {user.avatar ? <img src={user.avatar} alt="avatar" className="w-full h-full object-cover" /> : user.name[0]}
+          </div>
           <div>
             <div className="text-base font-bold">{user.name}</div>
             <div className="text-xs opacity-80">{user.email}</div>

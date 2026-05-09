@@ -21,7 +21,7 @@ export interface Notification {
 }
 
 interface State {
-  user: { name: string; email: string };
+  user: { name: string; email: string; avatar?: string };
   tasks: Task[];
   categories: { name: string; color: string }[];
   notifications: Notification[];
@@ -46,7 +46,7 @@ interface State {
 export const useApp = create<State>()(
   persist(
     (set) => ({
-      user: { name: "Oguh Akachukwu", email: "oguh@email.com" },
+      user: { name: "Oguh Akachukwu", email: "oguh@email.com", avatar: undefined },
       tasks: [
         { id: "1", title: "Read your books", priority: "High", category: "Personal", completed: false, createdAt: Date.now() },
         { id: "2", title: "Scout", priority: "Medium", category: "Work", completed: false, createdAt: Date.now() },

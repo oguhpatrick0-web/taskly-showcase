@@ -11,7 +11,7 @@ export function NavBar() {
     { id: "profile", to: "/profile", icon: User, label: "Profile", match: ["/profile", "/settings", "/notification-prefs", "/profile-edit", "/privacy", "/help"] },
   ];
   return (
-    <div className="fixed bottom-0 inset-x-0 max-w-md mx-auto bg-white border-t border-border flex justify-around py-2 z-50">
+    <div className="fixed bottom-0 inset-x-0 max-w-md mx-auto bg-background border-t border-border flex justify-around py-2 z-50">
       {items.map(({ id, to, icon: Icon, label, match }) => {
         const active = match.some((m) => path.startsWith(m));
         return (
